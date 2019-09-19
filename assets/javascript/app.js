@@ -15,22 +15,24 @@
 	// }
 // }
 
-var apiKey_fm = "&api_key=695e3639575a58050cf53a441e62b0aa"
-var searchType = "artist.getsimilar&"
-var searchFormat = "&format=json"
-var artist = "Joe Cocker"
+var apiKey_fm = "&api_key=695e3639575a58050cf53a441e62b0aa";
+var searchType = "artist.getsimilar&";
+var searchFormat = "&format=json";
+var artist = "Frank Sinatra";
 var searchArtist = "artist=" + artist;
 var method = "?method=" + searchType;
-var url_fm = "http://ws.audioscrobbler.com/2.0/"
+var url_fm = "http://ws.audioscrobbler.com/2.0/";
 var output = [];
 
 
 var settings_fm = {
 	"async": true,
 	"crossDomain": true,
-	// "url": "http://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist=cher&api_key=695e3639575a58050cf53a441e62b0aa&format=json",
-	"url": url_fm + method + searchType + searchArtist + apiKey_fm + searchFormat,
+	// "url": "http://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist=Joe Cocker&api_key=695e3639575a58050cf53a441e62b0aa&format=json",
+	// "url": "http://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist=" + artist + "&api_key=695e3639575a58050cf53a441e62b0aa&format=json",
+	"url": url_fm + method + searchArtist + apiKey_fm + searchFormat
 }
+// console.log(url_fm + method + searchArtist + apiKey_fm + searchFormat);
 
 $.ajax(settings_fm).done(function (response) {
 	console.log(output);
